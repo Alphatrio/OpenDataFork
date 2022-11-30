@@ -8,17 +8,19 @@ const XLSX = require('xlsx');
 const puppeteer = require('puppeteer')
 
 
-const PORT = process.env.PORT || 3000
+app.get('/', function (req, res) {
+    res.send('Hello World!')
+  })
+  
+  var server = app.listen(process.env.PORT || 3000, function () {
+    var host = server.address().address
+    var port = server.address().port
+    console.log('App listening at http://%s:%s', host, port)
+  })
 
-const app = express()
-
-app.get('/', function(req, response){
-	console.log('hello')
-	response.send('bienvenue sur mon serveur')
-})
 
 
-app.get('/bio', function(req,response){
+  app.get('/bio', function(req,response){
 
 })
 
